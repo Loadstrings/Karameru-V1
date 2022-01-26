@@ -1,0 +1,91 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TitleFrame = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TextLabel = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner_3 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScreenGui
+MainFrame.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+MainFrame.Position = UDim2.new(0.34824121, 0, 0.308678508, 0)
+MainFrame.Size = UDim2.new(0, 514, 0, 319)
+
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = MainFrame
+
+TitleFrame.Name = "TitleFrame"
+TitleFrame.Parent = MainFrame
+TitleFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+TitleFrame.Size = UDim2.new(0, 514, 0, 40)
+
+UICorner_2.CornerRadius = UDim.new(0, 6)
+UICorner_2.Parent = TitleFrame
+
+TextLabel.Parent = TitleFrame
+TextLabel.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+TextLabel.BorderSizePixel = 0
+TextLabel.Position = UDim2.new(0.204280153, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 304, 0, 40)
+TextLabel.Font = Enum.Font.SourceSansSemibold
+TextLabel.Text = "Karameru V1"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+ImageLabel.Parent = TitleFrame
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Size = UDim2.new(0, 47, 0, 40)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=8645628278"
+
+UICorner_3.CornerRadius = UDim.new(0, 6)
+UICorner_3.Parent = ImageLabel
+
+TextButton.Parent = TitleFrame
+TextButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderSizePixel = 0
+TextButton.Position = UDim2.new(0.795719862, 0, 0, 0)
+TextButton.Size = UDim2.new(0, 97, 0, 40)
+TextButton.Font = Enum.Font.ArialBold
+TextButton.Text = "X"
+TextButton.TextColor3 = Color3.fromRGB(85, 0, 0)
+TextButton.TextScaled = true
+TextButton.TextSize = 14.000
+TextButton.TextWrapped = true
+
+-- Scripts:
+
+local function RFVDY_fake_script() -- ScreenGui.Script 
+	local script = Instance.new('Script', ScreenGui)
+
+	local gui = script.Parent
+	local mainframe = gui.MainFrame
+	local titleframe = mainframe.TitleFrame
+	mainframe.Active = true
+	mainframe.Selectable = true
+	mainframe.Draggable = true
+	
+	print("Karameru V1 Executed! Welcome!")
+	
+	titleframe.TextButton.MouseButton1Click:Connect(function()
+		gui:Destroy()
+	end)
+	
+end
+coroutine.wrap(RFVDY_fake_script)()

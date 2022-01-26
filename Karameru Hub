@@ -12,6 +12,9 @@ local TextLabel = Instance.new("TextLabel")
 local ImageLabel = Instance.new("ImageLabel")
 local UICorner_3 = Instance.new("UICorner")
 local TextButton = Instance.new("TextButton")
+local ScriptScrolling = Instance.new("ScrollingFrame")
+local UICorner_4 = Instance.new("UICorner")
+local Saitama = Instance.new("TextButton")
 
 --Properties:
 
@@ -20,7 +23,8 @@ ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+MainFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+MainFrame.BorderColor3 = Color3.fromRGB(42, 42, 42)
 MainFrame.Position = UDim2.new(0.34824121, 0, 0.308678508, 0)
 MainFrame.Size = UDim2.new(0, 514, 0, 319)
 
@@ -69,23 +73,54 @@ TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
+ScriptScrolling.Name = "ScriptScrolling"
+ScriptScrolling.Parent = MainFrame
+ScriptScrolling.Active = true
+ScriptScrolling.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+ScriptScrolling.BorderColor3 = Color3.fromRGB(42, 42, 42)
+ScriptScrolling.Position = UDim2.new(0, 0, 0.125391856, 0)
+ScriptScrolling.Size = UDim2.new(0, 514, 0, 279)
+
+UICorner_4.CornerRadius = UDim.new(0, 6)
+UICorner_4.Parent = ScriptScrolling
+
+Saitama.Name = "Saitama"
+Saitama.Parent = ScriptScrolling
+Saitama.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Saitama.BorderColor3 = Color3.fromRGB(36, 36, 36)
+Saitama.Size = UDim2.new(0, 506, 0, 50)
+Saitama.Font = Enum.Font.SourceSansSemibold
+Saitama.Text = "Saitama"
+Saitama.TextColor3 = Color3.fromRGB(0, 0, 0)
+Saitama.TextScaled = true
+Saitama.TextSize = 14.000
+Saitama.TextWrapped = true
+
 -- Scripts:
 
-local function RFVDY_fake_script() -- ScreenGui.Script 
+local function LPEOY_fake_script() -- ScreenGui.Gui stuff 
 	local script = Instance.new('Script', ScreenGui)
 
+	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	local gui = script.Parent
 	local mainframe = gui.MainFrame
 	local titleframe = mainframe.TitleFrame
 	mainframe.Active = true
 	mainframe.Selectable = true
 	mainframe.Draggable = true
-	
+	local scrollframe = mainframe.ScriptScrolling
+	--//Printing\\--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	print("Karameru V1 Executed! Welcome!")
-	
+	--//Functions\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	titleframe.TextButton.MouseButton1Click:Connect(function()
 		gui:Destroy()
 	end)
 	
+	scrollframe.Saitama.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Saitama/main/Saitama.txt'),true))()
+	end)
+	
+	
+	
 end
-coroutine.wrap(RFVDY_fake_script)()
+coroutine.wrap(LPEOY_fake_script)()

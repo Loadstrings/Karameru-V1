@@ -15,6 +15,9 @@ local TextButton = Instance.new("TextButton")
 local ScriptScrolling = Instance.new("ScrollingFrame")
 local UICorner_4 = Instance.new("UICorner")
 local Saitama = Instance.new("TextButton")
+local BeachHub = Instance.new("TextButton")
+local Amazement = Instance.new("TextButton")
+local UTG = Instance.new("TextButton")
 
 --Properties:
 
@@ -87,7 +90,7 @@ UICorner_4.Parent = ScriptScrolling
 Saitama.Name = "Saitama"
 Saitama.Parent = ScriptScrolling
 Saitama.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Saitama.BorderColor3 = Color3.fromRGB(36, 36, 36)
+Saitama.BorderColor3 = Color3.fromRGB(30, 30, 30)
 Saitama.Size = UDim2.new(0, 506, 0, 50)
 Saitama.Font = Enum.Font.SourceSansSemibold
 Saitama.Text = "Saitama"
@@ -96,9 +99,48 @@ Saitama.TextScaled = true
 Saitama.TextSize = 14.000
 Saitama.TextWrapped = true
 
+BeachHub.Name = "BeachHub"
+BeachHub.Parent = ScriptScrolling
+BeachHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+BeachHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
+BeachHub.Position = UDim2.new(0, 0, 0.078369908, 0)
+BeachHub.Size = UDim2.new(0, 506, 0, 50)
+BeachHub.Font = Enum.Font.SourceSansSemibold
+BeachHub.Text = "Beach Hub"
+BeachHub.TextColor3 = Color3.fromRGB(0, 0, 0)
+BeachHub.TextScaled = true
+BeachHub.TextSize = 14.000
+BeachHub.TextWrapped = true
+
+Amazement.Name = "Amazement"
+Amazement.Parent = ScriptScrolling
+Amazement.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Amazement.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Amazement.Position = UDim2.new(0, 0, 0.156739816, 0)
+Amazement.Size = UDim2.new(0, 506, 0, 50)
+Amazement.Font = Enum.Font.SourceSansSemibold
+Amazement.Text = "Amazement"
+Amazement.TextColor3 = Color3.fromRGB(0, 0, 0)
+Amazement.TextScaled = true
+Amazement.TextSize = 14.000
+Amazement.TextWrapped = true
+
+UTG.Name = "UTG"
+UTG.Parent = ScriptScrolling
+UTG.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+UTG.BorderColor3 = Color3.fromRGB(30, 30, 30)
+UTG.Position = UDim2.new(0, 0, 0.235109717, 0)
+UTG.Size = UDim2.new(0, 506, 0, 50)
+UTG.Font = Enum.Font.SourceSansSemibold
+UTG.Text = "Ultimate Trolling GUI"
+UTG.TextColor3 = Color3.fromRGB(0, 0, 0)
+UTG.TextScaled = true
+UTG.TextSize = 14.000
+UTG.TextWrapped = true
+
 -- Scripts:
 
-local function LPEOY_fake_script() -- ScreenGui.Gui stuff 
+local function URBUV_fake_script() -- ScreenGui.Gui stuff 
 	local script = Instance.new('Script', ScreenGui)
 
 	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -120,7 +162,16 @@ local function LPEOY_fake_script() -- ScreenGui.Gui stuff
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Saitama/main/Saitama.txt'),true))()
 	end)
 	
+	scrollframe.BeachHub.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/bedra45/BeachHub/main/BeachAnimation'),true))()
+	end)
 	
+	scrollframe.Amazement.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/followz/Amazement/main/Amazement%20V2'),true))()
+	end)
 	
+	scrollframe.UTG.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
+	end)
 end
-coroutine.wrap(LPEOY_fake_script)()
+coroutine.wrap(URBUV_fake_script)()

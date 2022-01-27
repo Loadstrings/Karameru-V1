@@ -5,19 +5,22 @@
 
 local ScreenGui = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
 local TitleFrame = Instance.new("Frame")
-local UICorner_2 = Instance.new("UICorner")
 local TextLabel = Instance.new("TextLabel")
 local ImageLabel = Instance.new("ImageLabel")
-local UICorner_3 = Instance.new("UICorner")
+local UICorner = Instance.new("UICorner")
 local TextButton = Instance.new("TextButton")
-local ScriptScrolling = Instance.new("ScrollingFrame")
-local UICorner_4 = Instance.new("UICorner")
+local scriptscroll = Instance.new("ScrollingFrame")
 local Saitama = Instance.new("TextButton")
+local Butterloaf = Instance.new("TextButton")
+local BlockGun = Instance.new("TextButton")
+local script = Instance.new("TextButton")
+local Hubs = Instance.new("TextButton")
+local HubScroll = Instance.new("ScrollingFrame")
+local UTG = Instance.new("TextButton")
 local BeachHub = Instance.new("TextButton")
 local Amazement = Instance.new("TextButton")
-local UTG = Instance.new("TextButton")
+local YBAHub = Instance.new("TextButton")
 
 --Properties:
 
@@ -28,19 +31,15 @@ MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 MainFrame.BorderColor3 = Color3.fromRGB(42, 42, 42)
+MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.34824121, 0, 0.308678508, 0)
-MainFrame.Size = UDim2.new(0, 514, 0, 319)
-
-UICorner.CornerRadius = UDim.new(0, 6)
-UICorner.Parent = MainFrame
+MainFrame.Size = UDim2.new(0, 514, 0, 382)
 
 TitleFrame.Name = "TitleFrame"
 TitleFrame.Parent = MainFrame
 TitleFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+TitleFrame.BorderSizePixel = 0
 TitleFrame.Size = UDim2.new(0, 514, 0, 40)
-
-UICorner_2.CornerRadius = UDim.new(0, 6)
-UICorner_2.Parent = TitleFrame
 
 TextLabel.Parent = TitleFrame
 TextLabel.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
@@ -60,8 +59,8 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Size = UDim2.new(0, 47, 0, 40)
 ImageLabel.Image = "http://www.roblox.com/asset/?id=8645628278"
 
-UICorner_3.CornerRadius = UDim.new(0, 6)
-UICorner_3.Parent = ImageLabel
+UICorner.CornerRadius = UDim.new(0, 6)
+UICorner.Parent = ImageLabel
 
 TextButton.Parent = TitleFrame
 TextButton.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
@@ -76,19 +75,17 @@ TextButton.TextScaled = true
 TextButton.TextSize = 14.000
 TextButton.TextWrapped = true
 
-ScriptScrolling.Name = "ScriptScrolling"
-ScriptScrolling.Parent = MainFrame
-ScriptScrolling.Active = true
-ScriptScrolling.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-ScriptScrolling.BorderColor3 = Color3.fromRGB(42, 42, 42)
-ScriptScrolling.Position = UDim2.new(0, 0, 0.125391856, 0)
-ScriptScrolling.Size = UDim2.new(0, 514, 0, 279)
-
-UICorner_4.CornerRadius = UDim.new(0, 6)
-UICorner_4.Parent = ScriptScrolling
+scriptscroll.Name = "scriptscroll"
+scriptscroll.Parent = MainFrame
+scriptscroll.Active = true
+scriptscroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+scriptscroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
+scriptscroll.BorderSizePixel = 0
+scriptscroll.Position = UDim2.new(0, 0, 0.125391856, 0)
+scriptscroll.Size = UDim2.new(0, 514, 0, 279)
 
 Saitama.Name = "Saitama"
-Saitama.Parent = ScriptScrolling
+Saitama.Parent = scriptscroll
 Saitama.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 Saitama.BorderColor3 = Color3.fromRGB(30, 30, 30)
 Saitama.Size = UDim2.new(0, 506, 0, 50)
@@ -99,11 +96,86 @@ Saitama.TextScaled = true
 Saitama.TextSize = 14.000
 Saitama.TextWrapped = true
 
+Butterloaf.Name = "Butterloaf"
+Butterloaf.Parent = scriptscroll
+Butterloaf.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Butterloaf.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Butterloaf.Position = UDim2.new(0, 0, 0.065789476, 0)
+Butterloaf.Size = UDim2.new(0, 506, 0, 50)
+Butterloaf.Font = Enum.Font.SourceSansSemibold
+Butterloaf.Text = "Butterloaf"
+Butterloaf.TextColor3 = Color3.fromRGB(0, 0, 0)
+Butterloaf.TextScaled = true
+Butterloaf.TextSize = 14.000
+Butterloaf.TextWrapped = true
+
+BlockGun.Name = "BlockGun"
+BlockGun.Parent = scriptscroll
+BlockGun.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+BlockGun.BorderColor3 = Color3.fromRGB(30, 30, 30)
+BlockGun.Position = UDim2.new(0, 0, 0.131234497, 0)
+BlockGun.Size = UDim2.new(0, 506, 0, 50)
+BlockGun.Font = Enum.Font.SourceSansSemibold
+BlockGun.Text = "Block Gun"
+BlockGun.TextColor3 = Color3.fromRGB(0, 0, 0)
+BlockGun.TextScaled = true
+BlockGun.TextSize = 14.000
+BlockGun.TextWrapped = true
+
+script.Name = "script"
+script.Parent = MainFrame
+script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+script.BorderSizePixel = 0
+script.Position = UDim2.new(0, 0, 0.85575825, 0)
+script.Size = UDim2.new(0, 140, 0, 55)
+script.Font = Enum.Font.SourceSans
+script.Text = "Scripts"
+script.TextColor3 = Color3.fromRGB(0, 0, 0)
+script.TextScaled = true
+script.TextSize = 14.000
+script.TextWrapped = true
+
+Hubs.Name = "Hubs"
+Hubs.Parent = MainFrame
+Hubs.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Hubs.BorderSizePixel = 0
+Hubs.Position = UDim2.new(0.272373527, 0, 0.85575825, 0)
+Hubs.Size = UDim2.new(0, 140, 0, 55)
+Hubs.Font = Enum.Font.SourceSans
+Hubs.Text = "Hubs"
+Hubs.TextColor3 = Color3.fromRGB(0, 0, 0)
+Hubs.TextScaled = true
+Hubs.TextSize = 14.000
+Hubs.TextWrapped = true
+
+HubScroll.Name = "HubScroll"
+HubScroll.Parent = MainFrame
+HubScroll.Active = true
+HubScroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+HubScroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
+HubScroll.BorderSizePixel = 0
+HubScroll.Position = UDim2.new(0, 0, 0.125391856, 0)
+HubScroll.Size = UDim2.new(0, 514, 0, 279)
+HubScroll.Visible = false
+
+UTG.Name = "UTG"
+UTG.Parent = HubScroll
+UTG.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+UTG.BorderColor3 = Color3.fromRGB(30, 30, 30)
+UTG.Position = UDim2.new(0, 0, 0.0649526417, 0)
+UTG.Size = UDim2.new(0, 506, 0, 50)
+UTG.Font = Enum.Font.SourceSansSemibold
+UTG.Text = "Ultimate Trolling GUI"
+UTG.TextColor3 = Color3.fromRGB(0, 0, 0)
+UTG.TextScaled = true
+UTG.TextSize = 14.000
+UTG.TextWrapped = true
+
 BeachHub.Name = "BeachHub"
-BeachHub.Parent = ScriptScrolling
+BeachHub.Parent = HubScroll
 BeachHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 BeachHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
-BeachHub.Position = UDim2.new(0, 0, 0.078369908, 0)
+BeachHub.Position = UDim2.new(0, 0, -0.000164121389, 0)
 BeachHub.Size = UDim2.new(0, 506, 0, 50)
 BeachHub.Font = Enum.Font.SourceSansSemibold
 BeachHub.Text = "Beach Hub"
@@ -113,10 +185,10 @@ BeachHub.TextSize = 14.000
 BeachHub.TextWrapped = true
 
 Amazement.Name = "Amazement"
-Amazement.Parent = ScriptScrolling
+Amazement.Parent = HubScroll
 Amazement.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
 Amazement.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Amazement.Position = UDim2.new(0, 0, 0.156739816, 0)
+Amazement.Position = UDim2.new(0, 0, 0.129252911, 0)
 Amazement.Size = UDim2.new(0, 506, 0, 50)
 Amazement.Font = Enum.Font.SourceSansSemibold
 Amazement.Text = "Amazement"
@@ -125,22 +197,42 @@ Amazement.TextScaled = true
 Amazement.TextSize = 14.000
 Amazement.TextWrapped = true
 
-UTG.Name = "UTG"
-UTG.Parent = ScriptScrolling
-UTG.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-UTG.BorderColor3 = Color3.fromRGB(30, 30, 30)
-UTG.Position = UDim2.new(0, 0, 0.235109717, 0)
-UTG.Size = UDim2.new(0, 506, 0, 50)
-UTG.Font = Enum.Font.SourceSansSemibold
-UTG.Text = "Ultimate Trolling GUI"
-UTG.TextColor3 = Color3.fromRGB(0, 0, 0)
-UTG.TextScaled = true
-UTG.TextSize = 14.000
-UTG.TextWrapped = true
+YBAHub.Name = "YBAHub"
+YBAHub.Parent = HubScroll
+YBAHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+YBAHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
+YBAHub.Position = UDim2.new(0, 0, 0.196006835, 0)
+YBAHub.Size = UDim2.new(0, 506, 0, 50)
+YBAHub.Font = Enum.Font.SourceSansSemibold
+YBAHub.Text = "YBA Hub"
+YBAHub.TextColor3 = Color3.fromRGB(0, 0, 0)
+YBAHub.TextScaled = true
+YBAHub.TextSize = 14.000
+YBAHub.TextWrapped = true
 
 -- Scripts:
 
-local function URBUV_fake_script() -- ScreenGui.Gui stuff 
+local function YSWI_fake_script() -- script.LocalScript 
+	local script = Instance.new('LocalScript', script)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.HubScroll.Visible = false
+		script.Parent.Parent.scriptscroll.Visible = true
+	end)
+	
+end
+coroutine.wrap(YSWI_fake_script)()
+local function EZEPAN_fake_script() -- Hubs.LocalScript 
+	local script = Instance.new('LocalScript', Hubs)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.HubScroll.Visible = true
+		script.Parent.Parent.scriptscroll.Visible = false
+	end)
+	
+end
+coroutine.wrap(EZEPAN_fake_script)()
+local function UTKHXL_fake_script() -- ScreenGui.Gui stuff 
 	local script = Instance.new('Script', ScreenGui)
 
 	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -150,7 +242,8 @@ local function URBUV_fake_script() -- ScreenGui.Gui stuff
 	mainframe.Active = true
 	mainframe.Selectable = true
 	mainframe.Draggable = true
-	local scrollframe = mainframe.ScriptScrolling
+	local scrollframe = mainframe.scriptscroll
+	local hubscroll = mainframe.HubScroll
 	--//Printing\\--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	print("Karameru V1 Executed! Welcome!")
 	--//Functions\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -162,16 +255,28 @@ local function URBUV_fake_script() -- ScreenGui.Gui stuff
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Saitama/main/Saitama.txt'),true))()
 	end)
 	
-	scrollframe.BeachHub.MouseButton1Click:Connect(function()
+	hubscroll.BeachHub.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/bedra45/BeachHub/main/BeachAnimation'),true))()
 	end)
 	
-	scrollframe.Amazement.MouseButton1Click:Connect(function()
+	hubscroll.Amazement.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/followz/Amazement/main/Amazement%20V2'),true))()
 	end)
 	
-	scrollframe.UTG.MouseButton1Click:Connect(function()
+	hubscroll.UTG.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
 	end)
+	
+	scrollframe.BlockGun.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Block-gun/main/Gun.txt'),true))()
+	end)
+	
+	scrollframe.Butterloaf.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Butterloaf/main/Butterloaf.txt'),true))()
+	end)
+	
+	hubscroll.YBAHub.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://pastebin.com/raw/XUSatpwK'),true))()
+	end)
 end
-coroutine.wrap(URBUV_fake_script)()
+coroutine.wrap(UTKHXL_fake_script)()

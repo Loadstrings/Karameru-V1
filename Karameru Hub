@@ -14,18 +14,24 @@ local scriptscroll = Instance.new("ScrollingFrame")
 local Saitama = Instance.new("TextButton")
 local Butterloaf = Instance.new("TextButton")
 local BlockGun = Instance.new("TextButton")
-local script = Instance.new("TextButton")
+local SoldierAI = Instance.new("TextButton")
 local Hubs = Instance.new("TextButton")
 local HubScroll = Instance.new("ScrollingFrame")
 local UTG = Instance.new("TextButton")
 local BeachHub = Instance.new("TextButton")
 local Amazement = Instance.new("TextButton")
 local YBAHub = Instance.new("TextButton")
+local Homebutton = Instance.new("TextButton")
+local Home = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local script = Instance.new("TextButton")
 
 --Properties:
 
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
@@ -33,13 +39,13 @@ MainFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 MainFrame.BorderColor3 = Color3.fromRGB(42, 42, 42)
 MainFrame.BorderSizePixel = 0
 MainFrame.Position = UDim2.new(0.34824121, 0, 0.308678508, 0)
-MainFrame.Size = UDim2.new(0, 514, 0, 382)
+MainFrame.Size = UDim2.new(0, 558, 0, 382)
 
 TitleFrame.Name = "TitleFrame"
 TitleFrame.Parent = MainFrame
 TitleFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 TitleFrame.BorderSizePixel = 0
-TitleFrame.Size = UDim2.new(0, 514, 0, 40)
+TitleFrame.Size = UDim2.new(0, 558, 0, 40)
 
 TextLabel.Parent = TitleFrame
 TextLabel.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
@@ -82,7 +88,8 @@ scriptscroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 scriptscroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
 scriptscroll.BorderSizePixel = 0
 scriptscroll.Position = UDim2.new(0, 0, 0.125391856, 0)
-scriptscroll.Size = UDim2.new(0, 514, 0, 279)
+scriptscroll.Size = UDim2.new(0, 558, 0, 279)
+scriptscroll.Visible = false
 
 Saitama.Name = "Saitama"
 Saitama.Parent = scriptscroll
@@ -122,24 +129,24 @@ BlockGun.TextScaled = true
 BlockGun.TextSize = 14.000
 BlockGun.TextWrapped = true
 
-script.Name = "script"
-script.Parent = MainFrame
-script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-script.BorderSizePixel = 0
-script.Position = UDim2.new(0, 0, 0.85575825, 0)
-script.Size = UDim2.new(0, 140, 0, 55)
-script.Font = Enum.Font.SourceSans
-script.Text = "Scripts"
-script.TextColor3 = Color3.fromRGB(0, 0, 0)
-script.TextScaled = true
-script.TextSize = 14.000
-script.TextWrapped = true
+SoldierAI.Name = "SoldierAI"
+SoldierAI.Parent = scriptscroll
+SoldierAI.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+SoldierAI.BorderColor3 = Color3.fromRGB(30, 30, 30)
+SoldierAI.Position = UDim2.new(0, 0, 0.196679533, 0)
+SoldierAI.Size = UDim2.new(0, 506, 0, 50)
+SoldierAI.Font = Enum.Font.SourceSansSemibold
+SoldierAI.Text = "Soldier AI"
+SoldierAI.TextColor3 = Color3.fromRGB(0, 0, 0)
+SoldierAI.TextScaled = true
+SoldierAI.TextSize = 14.000
+SoldierAI.TextWrapped = true
 
 Hubs.Name = "Hubs"
 Hubs.Parent = MainFrame
 Hubs.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Hubs.BorderSizePixel = 0
-Hubs.Position = UDim2.new(0.272373527, 0, 0.85575825, 0)
+Hubs.Position = UDim2.new(0.496751279, 0, 0.853140533, 0)
 Hubs.Size = UDim2.new(0, 140, 0, 55)
 Hubs.Font = Enum.Font.SourceSans
 Hubs.Text = "Hubs"
@@ -155,7 +162,7 @@ HubScroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
 HubScroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
 HubScroll.BorderSizePixel = 0
 HubScroll.Position = UDim2.new(0, 0, 0.125391856, 0)
-HubScroll.Size = UDim2.new(0, 514, 0, 279)
+HubScroll.Size = UDim2.new(0, 558, 0, 279)
 HubScroll.Visible = false
 
 UTG.Name = "UTG"
@@ -210,29 +217,108 @@ YBAHub.TextScaled = true
 YBAHub.TextSize = 14.000
 YBAHub.TextWrapped = true
 
+Homebutton.Name = "Homebutton"
+Homebutton.Parent = MainFrame
+Homebutton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Homebutton.BorderSizePixel = 0
+Homebutton.Position = UDim2.new(-0.00132083893, 0, 0.853140473, 0)
+Homebutton.Size = UDim2.new(0, 140, 0, 55)
+Homebutton.Font = Enum.Font.SourceSans
+Homebutton.Text = "Home"
+Homebutton.TextColor3 = Color3.fromRGB(0, 0, 0)
+Homebutton.TextScaled = true
+Homebutton.TextSize = 14.000
+Homebutton.TextWrapped = true
+
+Home.Name = "Home"
+Home.Parent = MainFrame
+Home.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Home.BorderSizePixel = 0
+Home.Position = UDim2.new(0, 0, 0.104712039, 0)
+Home.Size = UDim2.new(0, 558, 0, 285)
+
+TextLabel_2.Parent = Home
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.Position = UDim2.new(0.0232974906, 0, 0.0982456133, 0)
+TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
+TextLabel_2.Font = Enum.Font.SourceSans
+TextLabel_2.Text = "Welcome, !"
+TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+
+ImageLabel_2.Parent = Home
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.Position = UDim2.new(0.437276006, 0, 0.0982456133, 0)
+ImageLabel_2.Size = UDim2.new(0, 91, 0, 76)
+ImageLabel_2.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+script.Name = "script"
+script.Parent = MainFrame
+script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+script.BorderSizePixel = 0
+script.Position = UDim2.new(0.248459682, 0, 0.853419304, 0)
+script.Size = UDim2.new(0, 140, 0, 55)
+script.Font = Enum.Font.SourceSans
+script.Text = "Scripts"
+script.TextColor3 = Color3.fromRGB(0, 0, 0)
+script.TextScaled = true
+script.TextSize = 14.000
+script.TextWrapped = true
+
 -- Scripts:
 
-local function YSWI_fake_script() -- script.LocalScript 
-	local script = Instance.new('LocalScript', script)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.HubScroll.Visible = false
-		script.Parent.Parent.scriptscroll.Visible = true
-	end)
-	
-end
-coroutine.wrap(YSWI_fake_script)()
-local function EZEPAN_fake_script() -- Hubs.LocalScript 
+local function QFZHUCD_fake_script() -- Hubs.LocalScript 
 	local script = Instance.new('LocalScript', Hubs)
 
 	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Home.Visible = false
 		script.Parent.Parent.HubScroll.Visible = true
 		script.Parent.Parent.scriptscroll.Visible = false
 	end)
 	
 end
-coroutine.wrap(EZEPAN_fake_script)()
-local function UTKHXL_fake_script() -- ScreenGui.Gui stuff 
+coroutine.wrap(QFZHUCD_fake_script)()
+local function HRSBSW_fake_script() -- Homebutton.LocalScript 
+	local script = Instance.new('LocalScript', Homebutton)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Home.Visible = true
+		script.Parent.Parent.HubScroll.Visible = false
+		script.Parent.Parent.scriptscroll.Visible = false
+	end)
+	
+end
+coroutine.wrap(HRSBSW_fake_script)()
+local function HFILVN_fake_script() -- Home.LocalScript 
+	local script = Instance.new('LocalScript', Home)
+
+	local frame = script.Parent
+	local player = game.Players.LocalPlayer
+	local userid = player.UserId
+	local thumtype = Enum.ThumbnailType.HeadShot
+	local thumsize = Enum.ThumbnailSize.Size420x420
+	local content = game.Players:GetUserThumbnailAsync(userid, thumtype, thumsize)
+	
+	frame.ImageLabel.Image = content
+	frame.TextLabel.Text = "Welcome, ".. player.Name 
+end
+coroutine.wrap(HFILVN_fake_script)()
+local function QHTTY_fake_script() -- script.LocalScript 
+	local script = Instance.new('LocalScript', script)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Home.Visible = false
+		script.Parent.Parent.HubScroll.Visible = false
+		script.Parent.Parent.scriptscroll.Visible = true
+	end)
+	
+end
+coroutine.wrap(QHTTY_fake_script)()
+local function GWOT_fake_script() -- ScreenGui.Gui stuff 
 	local script = Instance.new('Script', ScreenGui)
 
 	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -278,5 +364,9 @@ local function UTKHXL_fake_script() -- ScreenGui.Gui stuff
 	hubscroll.YBAHub.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet(('https://pastebin.com/raw/XUSatpwK'),true))()
 	end)
+	
+	scrollframe.SoldierAI.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet('https://pastebin.com/raw/EURiWBBn'))()
+	end)
 end
-coroutine.wrap(UTKHXL_fake_script)()
+coroutine.wrap(GWOT_fake_script)()

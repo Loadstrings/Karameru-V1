@@ -15,16 +15,24 @@ local Saitama = Instance.new("TextButton")
 local Butterloaf = Instance.new("TextButton")
 local BlockGun = Instance.new("TextButton")
 local SoldierAI = Instance.new("TextButton")
+local Caducus = Instance.new("TextButton")
+local LightArc = Instance.new("TextButton")
 local Hubs = Instance.new("TextButton")
 local HubScroll = Instance.new("ScrollingFrame")
 local UTG = Instance.new("TextButton")
 local BeachHub = Instance.new("TextButton")
 local Amazement = Instance.new("TextButton")
 local YBAHub = Instance.new("TextButton")
+local Pendulum = Instance.new("TextButton")
+local DomainX = Instance.new("TextButton")
+local Linorix = Instance.new("TextButton")
+local UnknowHub = Instance.new("TextButton")
 local Homebutton = Instance.new("TextButton")
 local Home = Instance.new("Frame")
 local TextLabel_2 = Instance.new("TextLabel")
 local ImageLabel_2 = Instance.new("ImageLabel")
+local Target = Instance.new("TextBox")
+local Teleport = Instance.new("TextButton")
 local script = Instance.new("TextButton")
 
 --Properties:
@@ -142,6 +150,32 @@ SoldierAI.TextScaled = true
 SoldierAI.TextSize = 14.000
 SoldierAI.TextWrapped = true
 
+Caducus.Name = "Caducus"
+Caducus.Parent = scriptscroll
+Caducus.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Caducus.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Caducus.Position = UDim2.new(0, 0, 0.26081565, 0)
+Caducus.Size = UDim2.new(0, 506, 0, 50)
+Caducus.Font = Enum.Font.SourceSansSemibold
+Caducus.Text = "Caducus"
+Caducus.TextColor3 = Color3.fromRGB(0, 0, 0)
+Caducus.TextScaled = true
+Caducus.TextSize = 14.000
+Caducus.TextWrapped = true
+
+LightArc.Name = "LightArc"
+LightArc.Parent = scriptscroll
+LightArc.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+LightArc.BorderColor3 = Color3.fromRGB(30, 30, 30)
+LightArc.Position = UDim2.new(0, 0, 0.326260686, 0)
+LightArc.Size = UDim2.new(0, 506, 0, 50)
+LightArc.Font = Enum.Font.SourceSansSemibold
+LightArc.Text = "Light Arc"
+LightArc.TextColor3 = Color3.fromRGB(0, 0, 0)
+LightArc.TextScaled = true
+LightArc.TextSize = 14.000
+LightArc.TextWrapped = true
+
 Hubs.Name = "Hubs"
 Hubs.Parent = MainFrame
 Hubs.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -217,6 +251,58 @@ YBAHub.TextScaled = true
 YBAHub.TextSize = 14.000
 YBAHub.TextWrapped = true
 
+Pendulum.Name = "Pendulum"
+Pendulum.Parent = HubScroll
+Pendulum.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Pendulum.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Pendulum.Position = UDim2.new(0, 0, 0.264069676, 0)
+Pendulum.Size = UDim2.new(0, 506, 0, 50)
+Pendulum.Font = Enum.Font.SourceSansSemibold
+Pendulum.Text = "Pendulum"
+Pendulum.TextColor3 = Color3.fromRGB(0, 0, 0)
+Pendulum.TextScaled = true
+Pendulum.TextSize = 14.000
+Pendulum.TextWrapped = true
+
+DomainX.Name = "DomainX"
+DomainX.Parent = HubScroll
+DomainX.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+DomainX.BorderColor3 = Color3.fromRGB(30, 30, 30)
+DomainX.Position = UDim2.new(0, 0, 0.329514712, 0)
+DomainX.Size = UDim2.new(0, 506, 0, 50)
+DomainX.Font = Enum.Font.SourceSansSemibold
+DomainX.Text = "Domain X"
+DomainX.TextColor3 = Color3.fromRGB(0, 0, 0)
+DomainX.TextScaled = true
+DomainX.TextSize = 14.000
+DomainX.TextWrapped = true
+
+Linorix.Name = "Linorix"
+Linorix.Parent = HubScroll
+Linorix.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+Linorix.BorderColor3 = Color3.fromRGB(30, 30, 30)
+Linorix.Position = UDim2.new(0, 0, 0.394959748, 0)
+Linorix.Size = UDim2.new(0, 506, 0, 50)
+Linorix.Font = Enum.Font.SourceSansSemibold
+Linorix.Text = "Linorix"
+Linorix.TextColor3 = Color3.fromRGB(0, 0, 0)
+Linorix.TextScaled = true
+Linorix.TextSize = 14.000
+Linorix.TextWrapped = true
+
+UnknowHub.Name = "UnknowHub"
+UnknowHub.Parent = HubScroll
+UnknowHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+UnknowHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
+UnknowHub.Position = UDim2.new(0, 0, 0.460404783, 0)
+UnknowHub.Size = UDim2.new(0, 506, 0, 50)
+UnknowHub.Font = Enum.Font.SourceSansSemibold
+UnknowHub.Text = "Unknown Hub"
+UnknowHub.TextColor3 = Color3.fromRGB(0, 0, 0)
+UnknowHub.TextScaled = true
+UnknowHub.TextSize = 14.000
+UnknowHub.TextWrapped = true
+
 Homebutton.Name = "Homebutton"
 Homebutton.Parent = MainFrame
 Homebutton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
@@ -252,9 +338,36 @@ TextLabel_2.TextWrapped = true
 ImageLabel_2.Parent = Home
 ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageLabel_2.BackgroundTransparency = 1.000
-ImageLabel_2.Position = UDim2.new(0.437276006, 0, 0.0982456133, 0)
-ImageLabel_2.Size = UDim2.new(0, 91, 0, 76)
+ImageLabel_2.Position = UDim2.new(0.437275976, 0, 0.0982456133, 0)
+ImageLabel_2.Size = UDim2.new(0, 50, 0, 50)
 ImageLabel_2.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
+
+Target.Name = "Target"
+Target.Parent = Home
+Target.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
+Target.BorderSizePixel = 0
+Target.Position = UDim2.new(0.274193525, 0, 0.340350866, 0)
+Target.Size = UDim2.new(0, 200, 0, 36)
+Target.Font = Enum.Font.SourceSans
+Target.PlaceholderText = "Player Name here"
+Target.Text = ""
+Target.TextColor3 = Color3.fromRGB(0, 0, 0)
+Target.TextScaled = true
+Target.TextSize = 14.000
+Target.TextWrapped = true
+
+Teleport.Name = "Teleport"
+Teleport.Parent = Home
+Teleport.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
+Teleport.BorderSizePixel = 0
+Teleport.Position = UDim2.new(0, 0, 0.340350866, 0)
+Teleport.Size = UDim2.new(0, 153, 0, 36)
+Teleport.Font = Enum.Font.SourceSans
+Teleport.Text = "TeleportTo"
+Teleport.TextColor3 = Color3.fromRGB(0, 0, 0)
+Teleport.TextScaled = true
+Teleport.TextSize = 14.000
+Teleport.TextWrapped = true
 
 script.Name = "script"
 script.Parent = MainFrame
@@ -271,7 +384,7 @@ script.TextWrapped = true
 
 -- Scripts:
 
-local function QFZHUCD_fake_script() -- Hubs.LocalScript 
+local function XZESFZ_fake_script() -- Hubs.LocalScript 
 	local script = Instance.new('LocalScript', Hubs)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -281,8 +394,8 @@ local function QFZHUCD_fake_script() -- Hubs.LocalScript
 	end)
 	
 end
-coroutine.wrap(QFZHUCD_fake_script)()
-local function HRSBSW_fake_script() -- Homebutton.LocalScript 
+coroutine.wrap(XZESFZ_fake_script)()
+local function CCMSFK_fake_script() -- Homebutton.LocalScript 
 	local script = Instance.new('LocalScript', Homebutton)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -292,8 +405,8 @@ local function HRSBSW_fake_script() -- Homebutton.LocalScript
 	end)
 	
 end
-coroutine.wrap(HRSBSW_fake_script)()
-local function HFILVN_fake_script() -- Home.LocalScript 
+coroutine.wrap(CCMSFK_fake_script)()
+local function RPBDXHS_fake_script() -- Home.LocalScript 
 	local script = Instance.new('LocalScript', Home)
 
 	local frame = script.Parent
@@ -306,8 +419,8 @@ local function HFILVN_fake_script() -- Home.LocalScript
 	frame.ImageLabel.Image = content
 	frame.TextLabel.Text = "Welcome, ".. player.Name 
 end
-coroutine.wrap(HFILVN_fake_script)()
-local function QHTTY_fake_script() -- script.LocalScript 
+coroutine.wrap(RPBDXHS_fake_script)()
+local function BXTYI_fake_script() -- script.LocalScript 
 	local script = Instance.new('LocalScript', script)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -317,8 +430,8 @@ local function QHTTY_fake_script() -- script.LocalScript
 	end)
 	
 end
-coroutine.wrap(QHTTY_fake_script)()
-local function GWOT_fake_script() -- ScreenGui.Gui stuff 
+coroutine.wrap(BXTYI_fake_script)()
+local function KFNQSAU_fake_script() -- ScreenGui.Gui stuff 
 	local script = Instance.new('Script', ScreenGui)
 
 	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -330,11 +443,39 @@ local function GWOT_fake_script() -- ScreenGui.Gui stuff
 	mainframe.Draggable = true
 	local scrollframe = mainframe.scriptscroll
 	local hubscroll = mainframe.HubScroll
+	local home = mainframe.Home
 	--//Printing\\--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	print("Karameru V1 Executed! Welcome!")
 	--//Functions\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	titleframe.TextButton.MouseButton1Click:Connect(function()
 		gui:Destroy()
+	end)
+	
+	mainframe.Home.Teleport.MouseButton1Click:Connect(function()
+		local pl = game.Players.LocalPlayer.Character.HumanoidRootPart
+		local pl2 = mainframe.Home.Target.Text
+		local humanoid = game.Players.LocalPlayer.Character.Humanoid
+		humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+		wait(0.1)
+	
+		pl.CFrame = game.Players[pl2].Character.HumanoidRootPart.CFrame
+	end)
+	
+	hubscroll.Linorix.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://pastebin.com/4zY4XvvA",true))()
+	end)
+	
+	hubscroll.DomainX.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet('https://shlex.dev/release/domainx/latest.lua',true))()
+	end)
+	
+	
+	hubscroll.Pendulum.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V4.lua"))()
+	end)
+	
+	hubscroll.UnknowHub.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet("https://paste.ee/r/Qf17k",true))()
 	end)
 	
 	scrollframe.Saitama.MouseButton1Click:Connect(function()
@@ -368,5 +509,13 @@ local function GWOT_fake_script() -- ScreenGui.Gui stuff
 	scrollframe.SoldierAI.MouseButton1Click:Connect(function()
 		loadstring(game:HttpGet('https://pastebin.com/raw/EURiWBBn'))()
 	end)
+	
+	scrollframe.Caducus.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Caducus/main/Caducus.txt'),true))()
+	end)
+	
+	scrollframe.Caducus.MouseButton1Click:Connect(function()
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Light-Arc/main/Light%20Arc.txt'),true))()
+	end)
 end
-coroutine.wrap(GWOT_fake_script)()
+coroutine.wrap(KFNQSAU_fake_script)()

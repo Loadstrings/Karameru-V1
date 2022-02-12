@@ -1,725 +1,144 @@
--- Gui to Lua
--- Version: 3.2
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
--- Instances:
+local karameruuser = game.Players.LocalPlayer
 
-local ScreenGui = Instance.new("ScreenGui")
-local MainFrame = Instance.new("Frame")
-local TitleFrame = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local ImageLabel = Instance.new("ImageLabel")
-local UICorner = Instance.new("UICorner")
-local ImageButton = Instance.new("ImageButton")
-local OpenButton = Instance.new("ImageButton")
-local scriptscroll = Instance.new("ScrollingFrame")
-local Saitama = Instance.new("TextButton")
-local Butterloaf = Instance.new("TextButton")
-local BlockGun = Instance.new("TextButton")
-local SoldierAI = Instance.new("TextButton")
-local Caducus = Instance.new("TextButton")
-local LightArc = Instance.new("TextButton")
-local Killer = Instance.new("TextButton")
-local LC = Instance.new("TextButton")
-local GK = Instance.new("TextButton")
-local AJ = Instance.new("TextButton")
-local AF = Instance.new("TextButton")
-local AS = Instance.new("TextButton")
-local Hubs = Instance.new("TextButton")
-local HubScroll = Instance.new("ScrollingFrame")
-local UTG = Instance.new("TextButton")
-local BeachHub = Instance.new("TextButton")
-local Amazement = Instance.new("TextButton")
-local YBAHub = Instance.new("TextButton")
-local Pendulum = Instance.new("TextButton")
-local DomainX = Instance.new("TextButton")
-local Linorix = Instance.new("TextButton")
-local UnknowHub = Instance.new("TextButton")
-local Homebutton = Instance.new("TextButton")
-local Home = Instance.new("Frame")
-local TextLabel_2 = Instance.new("TextLabel")
-local ImageLabel_2 = Instance.new("ImageLabel")
-local Target = Instance.new("TextBox")
-local Teleport = Instance.new("TextButton")
-local script = Instance.new("TextButton")
-local keyframe = Instance.new("Frame")
-local TextLabel_3 = Instance.new("TextLabel")
-local TextBox = Instance.new("TextBox")
-local TextButton = Instance.new("TextButton")
+local UI = Material.Load({
+     Title = "Karameru Hub V1", 
+     Style = 3,
+     SizeX = 550, -- Size in X
+     SizeY = 350,  -- Size in Y
+     Theme = "Aqua", -- There are 5 Styles, Aqua, Mocha, Jester, Dark, Light
+     ColorOverrides = {
+        MainFrame = Color3.fromRGB(35, 35, 35)
+    }
+})
 
---Properties:
+-- Pages
 
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ScreenGui.ResetOnSpawn = false
+local Page = UI.New({
+    Title = "Home" 
+})
 
-MainFrame.Name = "MainFrame"
-MainFrame.Parent = ScreenGui
-MainFrame.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-MainFrame.BorderColor3 = Color3.fromRGB(42, 42, 42)
-MainFrame.BorderSizePixel = 0
-MainFrame.Position = UDim2.new(0.364025325, 0, 0.308678508, 0)
-MainFrame.Size = UDim2.new(0, 517, 0, 363)
-MainFrame.Visible = false
+local Page2 = UI.New({
+    Title = "Scripts" 
+})
 
-TitleFrame.Name = "TitleFrame"
-TitleFrame.Parent = MainFrame
-TitleFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TitleFrame.BorderSizePixel = 0
-TitleFrame.Size = UDim2.new(0, 517, 0, 30)
+local Page3 = UI.New({
+    Title = "Hubs" 
+})
 
-TextLabel.Parent = TitleFrame
-TextLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextLabel.BorderSizePixel = 0
-TextLabel.Position = UDim2.new(0.204280183, 0, 0, 0)
-TextLabel.Size = UDim2.new(0, 304, 0, 30)
-TextLabel.Font = Enum.Font.SourceSansSemibold
-TextLabel.Text = "Karameru V1"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextScaled = true
-TextLabel.TextSize = 14.000
-TextLabel.TextWrapped = true
+local Page4 = UI.New({
+    Title = "Netless" 
+})
 
-ImageLabel.Parent = TitleFrame
-ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel.BackgroundTransparency = 1.000
-ImageLabel.Size = UDim2.new(0, 47, 0, 30)
-ImageLabel.Image = "http://www.roblox.com/asset/?id=8645628278"
+--Home
 
-UICorner.CornerRadius = UDim.new(0, 6)
-UICorner.Parent = ImageLabel
+Page.Label({
+    Text = "Welcome, ".. karameruuser.Name
+})
 
-ImageButton.Parent = TitleFrame
-ImageButton.BackgroundColor3 = Color3.fromRGB(19, 97, 19)
-ImageButton.BorderSizePixel = 0
-ImageButton.Position = UDim2.new(0.9404338, 0, 0, 0)
-ImageButton.Size = UDim2.new(0, 30, 0, 29)
-ImageButton.Image = "http://www.roblox.com/asset/?id=3035366888"
+Page.Slider({
+    Text = "Walkspeed",
+    Callback = function(value)
+        karameruuser.Character.Humanoid.WalkSpeed = (value)
+    end,
+    Min = 1,
+    Max = 1000,
+    Def = 16
+})
 
-OpenButton.Name = "OpenButton"
-OpenButton.Parent = TitleFrame
-OpenButton.BackgroundColor3 = Color3.fromRGB(85, 0, 0)
-OpenButton.BorderSizePixel = 0
-OpenButton.Position = UDim2.new(0.946236432, 0, 0, 0)
-OpenButton.Size = UDim2.new(0, 30, 0, 30)
-OpenButton.Visible = false
-OpenButton.Image = "http://www.roblox.com/asset/?id=3035366888"
+Page.Slider({
+    Text = "Jumppower",
+    Callback = function(value)
+        karameruuser.Character.Humanoid.JumpPowerw = (value)
+    end,
+    Min = 1,
+    Max = 1000,
+    Def = 50
+})
 
-scriptscroll.Name = "scriptscroll"
-scriptscroll.Parent = MainFrame
-scriptscroll.Active = true
-scriptscroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-scriptscroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
-scriptscroll.BorderSizePixel = 0
-scriptscroll.Position = UDim2.new(0, 0, 0.0785339996, 0)
-scriptscroll.Size = UDim2.new(0, 517, 0, 300)
+Page.Button({
+    Text = "Anti Fling",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Loadstrings/AF/main/Anti%20Fling.txt"))()
+    end
+})
 
-Saitama.Name = "Saitama"
-Saitama.Parent = scriptscroll
-Saitama.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Saitama.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Saitama.Size = UDim2.new(0, 506, 0, 39)
-Saitama.Font = Enum.Font.SourceSansSemibold
-Saitama.Text = "Saitama"
-Saitama.TextColor3 = Color3.fromRGB(0, 0, 0)
-Saitama.TextScaled = true
-Saitama.TextSize = 14.000
-Saitama.TextWrapped = true
-
-Butterloaf.Name = "Butterloaf"
-Butterloaf.Parent = scriptscroll
-Butterloaf.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Butterloaf.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Butterloaf.Position = UDim2.new(0, 0, 0.0533927828, 0)
-Butterloaf.Size = UDim2.new(0, 506, 0, 39)
-Butterloaf.Font = Enum.Font.SourceSansSemibold
-Butterloaf.Text = "Butterloaf"
-Butterloaf.TextColor3 = Color3.fromRGB(0, 0, 0)
-Butterloaf.TextScaled = true
-Butterloaf.TextSize = 14.000
-Butterloaf.TextWrapped = true
-
-BlockGun.Name = "BlockGun"
-BlockGun.Parent = scriptscroll
-BlockGun.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-BlockGun.BorderColor3 = Color3.fromRGB(30, 30, 30)
-BlockGun.Position = UDim2.new(0, 0, 0.10644111, 0)
-BlockGun.Size = UDim2.new(0, 506, 0, 39)
-BlockGun.Font = Enum.Font.SourceSansSemibold
-BlockGun.Text = "Block Gun"
-BlockGun.TextColor3 = Color3.fromRGB(0, 0, 0)
-BlockGun.TextScaled = true
-BlockGun.TextSize = 14.000
-BlockGun.TextWrapped = true
-
-SoldierAI.Name = "SoldierAI"
-SoldierAI.Parent = scriptscroll
-SoldierAI.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-SoldierAI.BorderColor3 = Color3.fromRGB(30, 30, 30)
-SoldierAI.Position = UDim2.new(0, 0, 0.159489453, 0)
-SoldierAI.Size = UDim2.new(0, 506, 0, 39)
-SoldierAI.Font = Enum.Font.SourceSansSemibold
-SoldierAI.Text = "Soldier AI"
-SoldierAI.TextColor3 = Color3.fromRGB(0, 0, 0)
-SoldierAI.TextScaled = true
-SoldierAI.TextSize = 14.000
-SoldierAI.TextWrapped = true
-
-Caducus.Name = "Caducus"
-Caducus.Parent = scriptscroll
-Caducus.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Caducus.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Caducus.Position = UDim2.new(0, 0, 0.212606281, 0)
-Caducus.Size = UDim2.new(0, 506, 0, 39)
-Caducus.Font = Enum.Font.SourceSansSemibold
-Caducus.Text = "Caducus"
-Caducus.TextColor3 = Color3.fromRGB(0, 0, 0)
-Caducus.TextScaled = true
-Caducus.TextSize = 14.000
-Caducus.TextWrapped = true
-
-LightArc.Name = "LightArc"
-LightArc.Parent = scriptscroll
-LightArc.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-LightArc.BorderColor3 = Color3.fromRGB(30, 30, 30)
-LightArc.Position = UDim2.new(0, 0, 0.265654624, 0)
-LightArc.Size = UDim2.new(0, 506, 0, 39)
-LightArc.Font = Enum.Font.SourceSansSemibold
-LightArc.Text = "Light Arc"
-LightArc.TextColor3 = Color3.fromRGB(0, 0, 0)
-LightArc.TextScaled = true
-LightArc.TextSize = 14.000
-LightArc.TextWrapped = true
-
-Killer.Name = "Killer"
-Killer.Parent = scriptscroll
-Killer.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Killer.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Killer.Position = UDim2.new(0, 0, 0.317996234, 0)
-Killer.Size = UDim2.new(0, 506, 0, 39)
-Killer.Font = Enum.Font.SourceSansSemibold
-Killer.Text = "Killer"
-Killer.TextColor3 = Color3.fromRGB(0, 0, 0)
-Killer.TextScaled = true
-Killer.TextSize = 14.000
-Killer.TextWrapped = true
-
-LC.Name = "LC"
-LC.Parent = scriptscroll
-LC.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-LC.BorderColor3 = Color3.fromRGB(30, 30, 30)
-LC.Position = UDim2.new(0, 0, 0.370337844, 0)
-LC.Size = UDim2.new(0, 506, 0, 39)
-LC.Font = Enum.Font.SourceSansSemibold
-LC.Text = "Lightning Cannon"
-LC.TextColor3 = Color3.fromRGB(0, 0, 0)
-LC.TextScaled = true
-LC.TextSize = 14.000
-LC.TextWrapped = true
-
-GK.Name = "GK"
-GK.Parent = scriptscroll
-GK.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-GK.BorderColor3 = Color3.fromRGB(30, 30, 30)
-GK.Position = UDim2.new(0, 0, 0.422679484, 0)
-GK.Size = UDim2.new(0, 506, 0, 39)
-GK.Font = Enum.Font.SourceSansSemibold
-GK.Text = "Grab Knife"
-GK.TextColor3 = Color3.fromRGB(0, 0, 0)
-GK.TextScaled = true
-GK.TextSize = 14.000
-GK.TextWrapped = true
-
-AJ.Name = "AJ"
-AJ.Parent = scriptscroll
-AJ.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-AJ.BorderColor3 = Color3.fromRGB(30, 30, 30)
-AJ.Position = UDim2.new(0, 0, 0.475021094, 0)
-AJ.Size = UDim2.new(0, 506, 0, 39)
-AJ.Font = Enum.Font.SourceSansSemibold
-AJ.Text = "AJ Blaster"
-AJ.TextColor3 = Color3.fromRGB(0, 0, 0)
-AJ.TextScaled = true
-AJ.TextSize = 14.000
-AJ.TextWrapped = true
-
-AF.Name = "AF"
-AF.Parent = scriptscroll
-AF.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-AF.BorderColor3 = Color3.fromRGB(30, 30, 30)
-AF.Position = UDim2.new(0, 0, 0.528740108, 0)
-AF.Size = UDim2.new(0, 506, 0, 39)
-AF.Font = Enum.Font.SourceSansSemibold
-AF.Text = "Anti Fling"
-AF.TextColor3 = Color3.fromRGB(0, 0, 0)
-AF.TextScaled = true
-AF.TextSize = 14.000
-AF.TextWrapped = true
-
-AS.Name = "AS"
-AS.Parent = scriptscroll
-AS.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-AS.BorderColor3 = Color3.fromRGB(30, 30, 30)
-AS.Position = UDim2.new(0, 0, 0.582459092, 0)
-AS.Size = UDim2.new(0, 506, 0, 39)
-AS.Font = Enum.Font.SourceSansSemibold
-AS.Text = "Anti Stroller"
-AS.TextColor3 = Color3.fromRGB(0, 0, 0)
-AS.TextScaled = true
-AS.TextSize = 14.000
-AS.TextWrapped = true
-
-Hubs.Name = "Hubs"
-Hubs.Parent = MainFrame
-Hubs.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Hubs.BorderSizePixel = 0
-Hubs.Position = UDim2.new(0.537370145, 0, 0.904980302, 0)
-Hubs.Size = UDim2.new(0, 140, 0, 34)
-Hubs.Font = Enum.Font.SourceSans
-Hubs.Text = "Hubs"
-Hubs.TextColor3 = Color3.fromRGB(0, 0, 0)
-Hubs.TextScaled = true
-Hubs.TextSize = 14.000
-Hubs.TextWrapped = true
-
-HubScroll.Name = "HubScroll"
-HubScroll.Parent = MainFrame
-HubScroll.Active = true
-HubScroll.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-HubScroll.BorderColor3 = Color3.fromRGB(42, 42, 42)
-HubScroll.BorderSizePixel = 0
-HubScroll.Position = UDim2.new(0, 0, 0.0785339996, 0)
-HubScroll.Size = UDim2.new(0, 517, 0, 300)
-HubScroll.Visible = false
-
-UTG.Name = "UTG"
-UTG.Parent = HubScroll
-UTG.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-UTG.BorderColor3 = Color3.fromRGB(30, 30, 30)
-UTG.Position = UDim2.new(0, 0, 0.0525559485, 0)
-UTG.Size = UDim2.new(0, 506, 0, 39)
-UTG.Font = Enum.Font.SourceSansSemibold
-UTG.Text = "Ultimate Trolling GUI"
-UTG.TextColor3 = Color3.fromRGB(0, 0, 0)
-UTG.TextScaled = true
-UTG.TextSize = 14.000
-UTG.TextWrapped = true
-
-BeachHub.Name = "BeachHub"
-BeachHub.Parent = HubScroll
-BeachHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-BeachHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
-BeachHub.Position = UDim2.new(0, 0, -0.000164121389, 0)
-BeachHub.Size = UDim2.new(0, 506, 0, 39)
-BeachHub.Font = Enum.Font.SourceSansSemibold
-BeachHub.Text = "Beach Hub"
-BeachHub.TextColor3 = Color3.fromRGB(0, 0, 0)
-BeachHub.TextScaled = true
-BeachHub.TextSize = 14.000
-BeachHub.TextWrapped = true
-
-Amazement.Name = "Amazement"
-Amazement.Parent = HubScroll
-Amazement.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Amazement.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Amazement.Position = UDim2.new(-0.00193423603, 0, 0.105836928, 0)
-Amazement.Size = UDim2.new(0, 506, 0, 39)
-Amazement.Font = Enum.Font.SourceSansSemibold
-Amazement.Text = "Amazement"
-Amazement.TextColor3 = Color3.fromRGB(0, 0, 0)
-Amazement.TextScaled = true
-Amazement.TextSize = 14.000
-Amazement.TextWrapped = true
-
-YBAHub.Name = "YBAHub"
-YBAHub.Parent = HubScroll
-YBAHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-YBAHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
-YBAHub.Position = UDim2.new(0, 0, 0.158816755, 0)
-YBAHub.Size = UDim2.new(0, 506, 0, 39)
-YBAHub.Font = Enum.Font.SourceSansSemibold
-YBAHub.Text = "YBA Hub"
-YBAHub.TextColor3 = Color3.fromRGB(0, 0, 0)
-YBAHub.TextScaled = true
-YBAHub.TextSize = 14.000
-YBAHub.TextWrapped = true
-
-Pendulum.Name = "Pendulum"
-Pendulum.Parent = HubScroll
-Pendulum.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Pendulum.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Pendulum.Position = UDim2.new(0, 0, 0.211728066, 0)
-Pendulum.Size = UDim2.new(0, 506, 0, 39)
-Pendulum.Font = Enum.Font.SourceSansSemibold
-Pendulum.Text = "Pendulum"
-Pendulum.TextColor3 = Color3.fromRGB(0, 0, 0)
-Pendulum.TextScaled = true
-Pendulum.TextSize = 14.000
-Pendulum.TextWrapped = true
-
-DomainX.Name = "DomainX"
-DomainX.Parent = HubScroll
-DomainX.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-DomainX.BorderColor3 = Color3.fromRGB(30, 30, 30)
-DomainX.Position = UDim2.new(0, 0, 0.264776409, 0)
-DomainX.Size = UDim2.new(0, 506, 0, 39)
-DomainX.Font = Enum.Font.SourceSansSemibold
-DomainX.Text = "Domain X"
-DomainX.TextColor3 = Color3.fromRGB(0, 0, 0)
-DomainX.TextScaled = true
-DomainX.TextSize = 14.000
-DomainX.TextWrapped = true
-
-Linorix.Name = "Linorix"
-Linorix.Parent = HubScroll
-Linorix.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-Linorix.BorderColor3 = Color3.fromRGB(30, 30, 30)
-Linorix.Position = UDim2.new(0, 0, 0.317824751, 0)
-Linorix.Size = UDim2.new(0, 506, 0, 39)
-Linorix.Font = Enum.Font.SourceSansSemibold
-Linorix.Text = "Linorix"
-Linorix.TextColor3 = Color3.fromRGB(0, 0, 0)
-Linorix.TextScaled = true
-Linorix.TextSize = 14.000
-Linorix.TextWrapped = true
-
-UnknowHub.Name = "UnknowHub"
-UnknowHub.Parent = HubScroll
-UnknowHub.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-UnknowHub.BorderColor3 = Color3.fromRGB(30, 30, 30)
-UnknowHub.Position = UDim2.new(0, 0, 0.370873094, 0)
-UnknowHub.Size = UDim2.new(0, 506, 0, 39)
-UnknowHub.Font = Enum.Font.SourceSansSemibold
-UnknowHub.Text = "Unknown Hub"
-UnknowHub.TextColor3 = Color3.fromRGB(0, 0, 0)
-UnknowHub.TextScaled = true
-UnknowHub.TextSize = 14.000
-UnknowHub.TextWrapped = true
-
-Homebutton.Name = "Homebutton"
-Homebutton.Parent = MainFrame
-Homebutton.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-Homebutton.BorderSizePixel = 0
-Homebutton.Position = UDim2.new(-0.00132081495, 0, 0.904980302, 0)
-Homebutton.Size = UDim2.new(0, 140, 0, 34)
-Homebutton.Font = Enum.Font.SourceSans
-Homebutton.Text = "Home"
-Homebutton.TextColor3 = Color3.fromRGB(0, 0, 0)
-Homebutton.TextScaled = true
-Homebutton.TextSize = 14.000
-Homebutton.TextWrapped = true
-
-Home.Name = "Home"
-Home.Parent = MainFrame
-Home.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-Home.BorderSizePixel = 0
-Home.Position = UDim2.new(0, 0, 0.081288822, 0)
-Home.Size = UDim2.new(0, 517, 0, 299)
-Home.Visible = false
-
-TextLabel_2.Parent = Home
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-TextLabel_2.BorderSizePixel = 0
-TextLabel_2.Position = UDim2.new(0.0232974906, 0, 0.0982456133, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.SourceSans
-TextLabel_2.Text = "Welcome, !"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-ImageLabel_2.Parent = Home
-ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageLabel_2.BackgroundTransparency = 1.000
-ImageLabel_2.Position = UDim2.new(0.437275976, 0, 0.0982456133, 0)
-ImageLabel_2.Size = UDim2.new(0, 50, 0, 50)
-ImageLabel_2.Image = "rbxasset://textures/ui/GuiImagePlaceholder.png"
-
-Target.Name = "Target"
-Target.Parent = Home
-Target.BackgroundColor3 = Color3.fromRGB(56, 56, 56)
-Target.BorderSizePixel = 0
-Target.Position = UDim2.new(0.295938104, 0, 0.340350807, 0)
-Target.Size = UDim2.new(0, 188, 0, 36)
-Target.Font = Enum.Font.SourceSans
-Target.PlaceholderText = "Player Name here"
-Target.Text = ""
-Target.TextColor3 = Color3.fromRGB(0, 0, 0)
-Target.TextScaled = true
-Target.TextSize = 14.000
-Target.TextWrapped = true
-
-Teleport.Name = "Teleport"
-Teleport.Parent = Home
-Teleport.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-Teleport.BorderSizePixel = 0
-Teleport.Position = UDim2.new(0, 0, 0.340350866, 0)
-Teleport.Size = UDim2.new(0, 153, 0, 36)
-Teleport.Font = Enum.Font.SourceSans
-Teleport.Text = "TeleportTo"
-Teleport.TextColor3 = Color3.fromRGB(0, 0, 0)
-Teleport.TextScaled = true
-Teleport.TextSize = 14.000
-Teleport.TextWrapped = true
-
-script.Name = "script"
-script.Parent = MainFrame
-script.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
-script.BorderSizePixel = 0
-script.Position = UDim2.new(0.267802089, 0, 0.904980302, 0)
-script.Size = UDim2.new(0, 140, 0, 34)
-script.Font = Enum.Font.SourceSans
-script.Text = "Scripts"
-script.TextColor3 = Color3.fromRGB(0, 0, 0)
-script.TextScaled = true
-script.TextSize = 14.000
-script.TextWrapped = true
-
-keyframe.Name = "key frame"
-keyframe.Parent = ScreenGui
-keyframe.BackgroundColor3 = Color3.fromRGB(42, 42, 42)
-keyframe.BorderSizePixel = 0
-keyframe.Position = UDim2.new(0.410896182, 0, 0.39784947, 0)
-keyframe.Size = UDim2.new(0, 349, 0, 208)
-
-TextLabel_3.Parent = keyframe
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextLabel_3.BorderSizePixel = 0
-TextLabel_3.Size = UDim2.new(0, 349, 0, 30)
-TextLabel_3.Font = Enum.Font.SourceSansSemibold
-TextLabel_3.Text = "Karameru Hub V1 key"
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-TextBox.Parent = keyframe
-TextBox.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-TextBox.BorderColor3 = Color3.fromRGB(42, 42, 42)
-TextBox.BorderSizePixel = 0
-TextBox.Position = UDim2.new(0.212034389, 0, 0.293269217, 0)
-TextBox.Size = UDim2.new(0, 200, 0, 30)
-TextBox.Font = Enum.Font.SourceSans
-TextBox.PlaceholderText = "Insert Key"
-TextBox.Text = ""
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
-
-TextButton.Parent = keyframe
-TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextButton.BorderColor3 = Color3.fromRGB(42, 42, 42)
-TextButton.Position = UDim2.new(0.212034389, 0, 0.591346145, 0)
-TextButton.Size = UDim2.new(0, 200, 0, 32)
-TextButton.Font = Enum.Font.SourceSansSemibold
-TextButton.Text = "Log In"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
--- Scripts:
-
-local function HJKIAA_fake_script() -- Hubs.LocalScript 
-	local script = Instance.new('LocalScript', Hubs)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Home.Visible = false
-		script.Parent.Parent.HubScroll.Visible = true
-		script.Parent.Parent.scriptscroll.Visible = false
-	end)
-	
-end
-coroutine.wrap(HJKIAA_fake_script)()
-local function YBYEK_fake_script() -- Homebutton.LocalScript 
-	local script = Instance.new('LocalScript', Homebutton)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Home.Visible = true
-		script.Parent.Parent.HubScroll.Visible = false
-		script.Parent.Parent.scriptscroll.Visible = false
-	end)
-	
-end
-coroutine.wrap(YBYEK_fake_script)()
-local function VNTCSQE_fake_script() -- Home.LocalScript 
-	local script = Instance.new('LocalScript', Home)
-
-	local frame = script.Parent
-	local player = game.Players.LocalPlayer
-	local userid = player.UserId
-	local thumtype = Enum.ThumbnailType.HeadShot
-	local thumsize = Enum.ThumbnailSize.Size420x420
-	local content = game.Players:GetUserThumbnailAsync(userid, thumtype, thumsize)
-	
-	frame.ImageLabel.Image = content
-	frame.TextLabel.Text = "Welcome, ".. player.Name 
-end
-coroutine.wrap(VNTCSQE_fake_script)()
-local function EXADLVK_fake_script() -- script.LocalScript 
-	local script = Instance.new('LocalScript', script)
-
-	script.Parent.MouseButton1Click:Connect(function()
-		script.Parent.Parent.Home.Visible = false
-		script.Parent.Parent.HubScroll.Visible = false
-		script.Parent.Parent.scriptscroll.Visible = true
-	end)
-	
-end
-coroutine.wrap(EXADLVK_fake_script)()
-local function JWPS_fake_script() -- ScreenGui.Gui stuff 
-	local script = Instance.new('Script', ScreenGui)
-
-	--//Items\\-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	local gui = script.Parent
-	local mainframe = gui.MainFrame
-	local titleframe = mainframe.TitleFrame
-	mainframe.Active = true
-	mainframe.Selectable = true
-	mainframe.Draggable = true
-	local scrollframe = mainframe.scriptscroll
-	local hubscroll = mainframe.HubScroll
-	local home = mainframe.Home
-	--//Printing\\--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	print("Karameru V1 Executed! Welcome!")
-	--//Functions\\-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	titleframe.ImageButton.MouseButton1Click:Connect(function()
-		hubscroll.Visible = false
-		home.Visible = false
-		scrollframe.Visible = false
-		mainframe.Homebutton.Visible = false
-		mainframe.Hubs.Visible = false
-		mainframe.script.Visible = false
-		mainframe.BackgroundTransparency = 1
-		titleframe.OpenButton.Visible = true
-		titleframe.ImageButton.Visible = false
-	end)
-	
-	titleframe.OpenButton.MouseButton1Click:Connect(function()
-		hubscroll.Visible = true
-		home.Visible = true
-		scrollframe.Visible = true
-		mainframe.Homebutton.Visible = true
-		mainframe.Hubs.Visible = true
-		mainframe.script.Visible = true
-		mainframe.BackgroundTransparency = 0
-		titleframe.OpenButton.Visible = false
-		titleframe.ImageButton.Visible = true
-	end)
-	
-	mainframe.Home.Teleport.MouseButton1Click:Connect(function()
-		local p1 = game.Players.LocalPlayer.Character.HumanoidRootPart
-		local p2 = home.Target.Text
-		local pos = p1.CFrame
-	
-		p1.CFrame = game.Players[p2].Character.HumanoidRootPart.CFrame
-	end)
-	
-	hubscroll.Linorix.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/vilRBLX/Linorix/main/.github/workflows/linorix.lua'),true))()
-	end)
-	
-	hubscroll.DomainX.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://shlex.dev/release/domainx/latest.lua',true))()
-	end)
-	
-	
-	hubscroll.Pendulum.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V4.lua"))()
-	end)
-	
-	hubscroll.UnknowHub.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://paste.ee/r/Qf17k",true))()
-	end)
-	
-	scrollframe.Saitama.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Saitama/main/Saitama.txt'),true))()
-	end)
-	
-	hubscroll.BeachHub.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/bedra45/BeachHub/main/BeachAnimation'),true))()
-	end)
-	
-	hubscroll.Amazement.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/followz/Amazement/main/Amazement%20V2'),true))()
-	end)
-	
-	hubscroll.UTG.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/Blukez/Scripts/main/UTG%20V3%20RAW"))()
-	end)
-	
-	scrollframe.BlockGun.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Block-gun/main/Gun.txt'),true))()
-	end)
-	
-	scrollframe.Butterloaf.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Butterloaf/main/Butterloaf.txt'),true))()
-	end)
-	
-	hubscroll.YBAHub.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://pastebin.com/raw/XUSatpwK'),true))()
-	end)
-	
-	scrollframe.SoldierAI.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet('https://pastebin.com/raw/EURiWBBn'))()
-	end)
-	
-	scrollframe.Caducus.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Caducus/main/Caducus.txt'),true))()
-	end)
-	
-	scrollframe.LightArc.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/Light-Arc/main/Light%20Arc.txt'),true))()
-	end)
-	
-	scrollframe.AJ.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/AJ/main/Aj%20Blaster%20Script.lua'),true))()
-	end)
-	
-	scrollframe.GK.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/GK/main/Grab%20Knife.lua'),true))()
-	end)
-	
-	scrollframe.LC.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/LC/main/Lightning%20Cannon.lua'),true))()
-	end)
-	
-	scrollframe.Killer.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/KI/main/Nep.%20sword%20and%20gun.lua'),true))()
-	end)
-	
-	scrollframe.AS.MouseButton1Click:Connect(function()
-		local rs = game:GetService("RunService")
+Page.Button({
+    Text = "Anti Stroller",
+    Callback = function()
+        local rs = game:GetService("RunService")
 		print("anti stroller activated, get those noobs!")
 		rs.Heartbeat:Connect(function()
 			game.Players.LocalPlayer.Character.Humanoid.Sit = false
 		end)
-	end)
-	
-	scrollframe.AF.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/AF/main/Anti%20Fling.txt'),true))()
-	end)
-end
-coroutine.wrap(JWPS_fake_script)()
-local function DHFLFU_fake_script() -- keyframe.LocalScript 
-	local script = Instance.new('LocalScript', keyframe)
+    end
+})
 
-	local key = script.Parent.TextBox
-	local validkeys = "karameru"
-	
-	script.Parent.TextButton.MouseButton1Click:Connect(function()
-		if key.Text == validkeys then
-			script.Parent.Parent.MainFrame.Visible = true
-			wait(0.00001)
-			script.Parent:Destroy()
-		elseif key.Text == "" then
-			key.Text = "" 
-		else
-			key.Text = "Incorrect"
-			wait(1)
-			key.Text = ""
-		end
-	end)
-end
-coroutine.wrap(DHFLFU_fake_script)()
+-- Scripts
+
+Page2.Button({
+    Text = "AJ Blaster",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/AJ/main/Aj%20Blaster%20Script.lua'),true))()
+    end
+})
+
+Page2.Button({
+    Text = "Killer",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Loadstrings/KI/main/Nep.%20sword%20and%20gun.lua"))()
+    end
+})
+
+Page2.Button({
+    Text = "Lightning Cannon",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/LC/main/Lightning%20Cannon.lua'),true))()
+    end
+})
+
+Page2.Button({
+    Text = "Grab Knife",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Loadstrings/GK/main/Grab%20Knife.lua'),true))()
+    end
+})
+
+-- Hubs
+
+Page3.Button({
+    Text = "Pendulum Hub",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/Tescalus/Pendulum-Hubs-Source/main/Pendulum%20Hub%20V4.lua'),true))()
+    end
+})
+
+Page3.Button({
+    Text = "Beach Hub",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/bedra45/BeachHub/main/BeachAnimation"))()
+    end
+})
+
+Page3.Button({
+    Text = "Domain X",
+    Callback = function()
+        loadstring(game:HttpGet(('https://shlex.dev/release/domainx/latest.lua'),true))()
+    end
+})
+
+Page3.Button({
+    Text = "Amazement",
+    Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/followz/Amazement/main/Amazement%20V2'),true))()
+    end
+})
+-- Netless
+
+Page4.Button({
+    Text = "Netless",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/Cu7bKQWN"))()
+    end
+})
